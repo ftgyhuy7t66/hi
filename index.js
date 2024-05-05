@@ -1,17 +1,12 @@
-function combinationSum(candidates, target) {
-  const result = [];
-  backtrack([], 0, 0);
-  return result;
-  function backtrack(combination, start, sum) {
-    if (sum === target) {
-      result.push([...combination]);
-      return;
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
     }
-    if (sum > target) return;
-    for (let i = start; i < candidates.length; i++) {
-      combination.push(candidates[i]);
-      backtrack(combination, i, sum + candidates[i]);
-      combination.pop();
-    }
+    arr[j + 1] = key;
   }
+  return arr;
 }
