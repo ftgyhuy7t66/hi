@@ -1,4 +1,4 @@
-const factorial = (num) => {
-  if (num === 0) return 1;
-  return num * factorial(num - 1);
-};
+function maxDepth(root) {
+  if (!root) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+}
