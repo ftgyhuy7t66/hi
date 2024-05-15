@@ -1,3 +1,6 @@
-function rotateArray(arr, n) {
-  return arr.slice(n).concat(arr.slice(0, n));
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) return i;
+  }
+  return -1;
 }
